@@ -12,7 +12,6 @@ import {
     doc,
     getDoc
 } from 'firebase/firestore'
-import { Header } from "../../components/Header"
 
 interface LinkProps {
     id: string;
@@ -82,11 +81,10 @@ export function Home() {
 
     return (
         <div className="flex flex-col w-full py-4 items-center justify-center">
-            <Header />
-            <h1 className="md:text-4xl  text-3xl font-bold text-white mt-20">Igor Mota</h1>
+            <h1 className="md:text-4xl  text-3xl font-bold text-white mt-20">Seja Bem-vindo</h1>
             <span className="text-gray-50 mb-3 mt-20 ">Veja meu links 👇</span>
 
-            <main className="flex flex-col w-11/12 max-w-xl text-center">
+            <main className="flex flex-col w-11/12 max-w-2xs text-center items-center justify-center">
                 {links.map((item) => (
                     <section
                         style={{ backgroundColor: item.bg }}
