@@ -30,7 +30,7 @@ export function Admin() {
     const [links, setLinks] = useState<LinkProps[]>([])
 
     useEffect(() => {
-        const linksRef = collection(db, "link")
+        const linksRef = collection(db, "links")
         const queryRef = query(linksRef, orderBy("created", "asc"))
 
         const unsub = onSnapshot(queryRef, (snapshot) => {
@@ -155,7 +155,7 @@ export function Admin() {
                     key={link.id}
                     className="flex items-center justify-between w-11/12 max-w-xl rounded py-3 px-2 mb-2 select-none"
                     style={{ backgroundColor: link.bg, color: link.color }}>
-                    <p className="font-medium">{link.name}</p>
+                    <p>{link.name}</p>
                     <div>
                         <button
                             onClick={() => handleDeleteLink(link.id)}
